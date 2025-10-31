@@ -30,6 +30,8 @@ header{
     justify-content: space-between;
     position: fixed;
     height: 50px;
+    top: 0;
+   z-index: 1000;
 }
 
  header ul,li{
@@ -351,6 +353,63 @@ header a:active{
     text-align: center;
 }
 
+
+#work{
+  background-color: #F2F2F2;
+  text-align: center;
+  margin: 50px 0;
+}
+
+#work h1{
+  text-align: center;
+  font-size: 41px;
+  color: #252525;
+  margin-top: 50px;
+}
+
+#work .gallery{
+  display: inline-block;
+  position: relative;
+  margin-top: 50px;
+  /* padding-bottom: 50px; */
+  overflow: hidden;
+}
+
+.gallery img{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.gallery:hover .overlay{
+  opacity: 1;
+  background-color: rgba(0, 180, 217, 0.5);
+}
+
+.icons{
+  display: flex;
+  gap: 20px;
+}
+
+.overlay img{
+  width: 30px;
+  background-color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
 .contact{
     display: flex;
     justify-content: center;
@@ -362,7 +421,7 @@ header a:active{
     flex-direction: row;
     box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
     width: 1150px;
-    /* height: 650px; */
+    
     gap: 20px;
 }
 
@@ -543,97 +602,171 @@ footer p{
 
 
 
-@media (max-width: 575.98px) {
-  .about .row,
-  .contact .container {
-    flex-direction: column; 
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-  }
+@media screen and (max-width: 575px) {
+    header nav, header ul {
+        width: auto;
+        flex-direction: column;
+        margin-right: 0;
+    }
 
-  .about .container,
-  .contact .box form,
-  .address-side .items {
-    width: 100%; 
-    margin: 0 auto;
-  }
+    header .logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .home h2 {
-    font-size: 24px; 
-    padding-top: 100px; 
-  }
+    .home h2 {
+        font-size: 30px;
+        padding-top: 120px;
+    }
 
-  .home h2 span {
-    font-size: 36px;
-  }
+    .home h2 span {
+        font-size: 45px;
+    }
 
-  .services .container {
-    flex-direction: column;
-    gap: 15px;
-  }
+    .about .row {
+        flex-direction: column;
+        padding: 0 5%;
+        gap: 20px;
+    }
 
-  header nav {
-    width: 100%;
-    margin-right: 0;
-    justify-content: space-around;
-  }
+    .about .container, .about img {
+        width: 100%;
+    }
 
-  header .logo {
-    margin-left: 0;
-  }
+    .services .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .services .box {
+        width: 90%;
+        max-width: 400px;
+        margin-top: 20px;
+    }
+
+    .contact .container {
+        flex-direction: column;
+        width: 95%;
+        gap: 20px;
+    }
+
+    .contact .box form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .contact .formrow {
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .address-side .items {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    footer img {
+        transform: none;
+        margin-bottom: 10px;
+    }
+
+    footer p {
+        margin-top: 0;
+        text-align: center;
+    }
 }
 
 
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .about .row,
-  .contact .container {
-    flex-wrap: wrap;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .about .row {
+        flex-direction: column;
+        padding: 0 5%;
+        gap: 20px;
+    }
 
-  .about .container,
-  .contact .box form,
-  .address-side .items {
-    width: 48%;
-    margin: 1%;
-  }
+    .about .container, .about img {
+        width: 100%;
+    }
 
-  .home h2 {
-    font-size: 30px;
-    padding-top: 150px;
-  }
+    .services .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
 
-  .home h2 span {
-    font-size: 50px;
-  }
+    .services .box {
+        width: 45%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
 
-  
+    .contact .container {
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .contact .box form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .address-side .items {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+    }
 }
 
 
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .about .row,
-  .contact .container {
-    flex-wrap: wrap;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .about .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 5%;
+        gap: 30px;
+    }
 
-  .about .container,
-  .contact .box form,
-  .address-side .items {
-    width: 45%;
-    margin: 2.5%;
-  }
+    .about .container, .about img {
+        width: 48%;
+    }
 
-  .home h2 {
-    font-size: 36px;
-    padding-top: 170px;
-  }
+    .services .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
 
-  .home h2 span {
-    font-size: 60px;
-  }
+    .services .box {
+        width: 48%;
+        margin-top: 30px;
+    }
+
+    .contact .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 95%;
+        gap: 20px;
+    }
+
+    .contact .box form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .address-side .items {
+        width: 48%;
+        margin-right: 0;
+        margin-top: 20px;
+    }
 }
+
